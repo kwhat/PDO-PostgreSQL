@@ -1,0 +1,54 @@
+{
+    "name": "faapz/pdo-postgresql",
+    "description": "PostgreSQL Server extension to faapz/pdo",
+    "type": "library",
+    "keywords": ["faapz", "pdo", "postgre", "sql", "postgresql"],
+    "homepage": "https://github.com/FaaPz/PDO-PostgreSQL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabian de Laender",
+            "email": "fabian@faapz.productions",
+            "homepage": "https://faapz.productions",
+            "role": "Owner"
+        },
+        {
+            "name": "Alexander Barker",
+            "email": "alex@1stleg.com",
+            "homepage": "https://github.com/kwhat/",
+            "role": "Collaborator"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FaaPz/PDO-PostgreSQL/issues",
+        "docs": "https://github.com/FaaPz/PDO-PostgreSQL/blob/master/docs/README.md"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-pdo": "*",
+        "faapz/pdo": "2.x-dev"
+    },
+    "require-dev": {
+        "phan/phan": "^2.2",
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FaaPz\\PDO\\PostgreSQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FaaPz\\PDO\\PostgreSQL\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": [
+            "phpcs -s --standard=phpcs.xml",
+            "phan"
+        ],
+        "test": "phpunit -v --coverage-html build/coverage tests/"
+    }
+}
